@@ -1,0 +1,6 @@
+<wifi-conf
+  title="SoftAP 配网"
+  pluginName="wifiConfSoftAp"
+  errorTips="{{errorTips}}"
+  needDeviceAp="{{true}}"
+/>
