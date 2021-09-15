@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "page-wrapper": "/components/page-wrapper/page-wrapper"
+  },
+  "navigationBarTitleText": ""
+}

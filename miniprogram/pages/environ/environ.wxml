@@ -1,0 +1,27 @@
+<page-wrapper bind:loginready="onLoginReady">
+    <view class="container">
+        <view>
+            <view class="title">环境</view>
+        </view>
+        <view class="seperator"></view>
+    </view>
+</page-wrapper>
+
+<template name="environment-list">
+  <view
+    class="environment-item need-hover" 
+    wx:for="{{environmentList}}"
+    wx:key="name"
+    bindtap="onTapItem"
+    data-item="{{item}}"
+    hover-start-time="20"
+    hover-stay-time="70"
+    hover-class="hover"
+  >
+    <view class="item-content">
+      <view class="item-body">
+        
+      </view>>
+    </view>
+  </view>
+</template>

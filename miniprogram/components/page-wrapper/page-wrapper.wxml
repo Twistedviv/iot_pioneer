@@ -2,7 +2,7 @@
   <view class="container" wx:if="{{show === 'auth'}}">
     <view class="page-title">
       <view>腾讯云物联网开发平台</view>
-      <view>小程序 Demo</view>
+      <view>小程序</view>
     </view>
     <image 
       src="https://main.qcloudimg.com/raw/5c1b129f7e134621e6ae981c9b00243e/home-loading-bg.png"

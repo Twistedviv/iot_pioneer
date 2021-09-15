@@ -20,6 +20,8 @@
     "qcloud-iotexplorer-appdev-sdk": "^1.0.29",
     "query-string": "^6.13.1",
     "url-parse": "^1.4.7",
-    "weui-miniprogram": "^1.0.4"
+    "weui": "^2.4.4",
+    "weui-miniprogram": "^1.0.4",
+    "weui-wxss": "^2.4.4"
   }
 }

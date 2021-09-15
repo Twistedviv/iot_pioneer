@@ -2,7 +2,8 @@
   "usingComponents": {
     "page-wrapper": "/components/page-wrapper/page-wrapper",
     "single-button": "/components/single-button/single-button",
-    "mp-loading": "/miniprogram_npm/weui-miniprogram/loading/loading"
+    "mp-loading": "/miniprogram_npm/weui-miniprogram/loading/loading",
+    "tabbar": "/miniprogram_npm/weui-miniprogram/tabbar/tabbar"
   },
   "navigationBarTitleText": "",
   "enablePullDownRefresh": true
