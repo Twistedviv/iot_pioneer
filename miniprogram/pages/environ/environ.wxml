@@ -4,6 +4,7 @@
             <view class="title">环境</view>
         </view>
         <view class="seperator"></view>
+        <template is="environment-list" data="{{environmentList}}"></template>
     </view>
 </page-wrapper>
 
@@ -20,8 +21,15 @@
   >
     <view class="item-content">
       <view class="item-body">
-        
-      </view>>
+        <image class="item-icon"></image>
+        <view class="item-info">
+            <view class="info-data">
+                <text class="data-name">{{item.name}}: </text>
+                <text class="data-value">{{item.value}}</text>
+            </view>
+            <view class="info-tip">tip：室温偏高，试试打开电扇</view>
+        </view>
+      </view>
     </view>
   </view>
 </template>

@@ -16,3 +16,35 @@
     background-color: #f0f0f0;
     margin: 10rpx 0 20rpx;
 }
+
+
+
+.item-content {
+    height: 200rpx;
+    border-radius: 20rpx;
+    background-color: aqua;
+    padding: 30rpx;
+    box-sizing: border-box;
+}
+.item-body {
+    height: 100%;
+    background-color: bisque;
+    display: flex;
+}
+.item-icon {
+    width: 140rpx;
+    height: 140rpx;
+    background-color: black;
+}
+.item-info {
+    padding: 10rpx 0 20rpx 40rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.info-data {
+    font-size: 34rpx;
+}
+.info-tip {
+    font-size: 24rpx;
+}

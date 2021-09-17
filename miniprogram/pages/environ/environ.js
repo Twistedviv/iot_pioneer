@@ -5,7 +5,10 @@ Page({
      * 页面的初始数据
      */
     data: {
-        environmentList: [],
+        environmentList: [{
+            name: '室温',
+            value: 60
+        }],
         shareDeviceList: [],
         deviceStatusMap: {},
         inited: false,
