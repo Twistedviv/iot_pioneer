@@ -10,9 +10,12 @@ Page({
     deviceStatusMap: {},
     inited: false,
     userId: '',
+    userName: 'XXX',
   },
 
   onLoad() {
+    this.setData({userName: app.globalData.userInfo.nickName})
+    this.requestWeather();
     this.unsubscribeAll = subscribeStore([
       'deviceList',
       'shareDeviceList',
@@ -49,7 +52,17 @@ Page({
   onPullDownRefresh() {
     this.fetchData();
   },
-
+  requestWeather(){
+    wx.request({
+      url: 'https://wthrcdn.etouch.cn/weather_mini?city=上海市',
+      success: (res) => {
+        console.log("请求成功：",res);
+      },
+      fail: (e) => {
+        console.log("请求失败");
+      }
+    })
+  },
   fetchData() {
     actions.getDevicesData()
       .then(() => {

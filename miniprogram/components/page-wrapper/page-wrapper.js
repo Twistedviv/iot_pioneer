@@ -68,6 +68,11 @@ Component({
         });
 
         const { nickName, avatarUrl } = result.userInfo;
+        
+        wx.setStorage({
+          key:"userInfo",
+          data: JSON.stringify(result.userInfo)
+        })
 
         // 获取到的用户信息写入到 globalData，SDK 登录时使用
         app.globalData.userInfo = { nickName, avatarUrl };

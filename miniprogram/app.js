@@ -23,14 +23,30 @@ App({
   onLaunch() {
     const systemInfo = wx.getSystemInfoSync();
     const platform = (systemInfo.platform || '').toLowerCase();
-
+    try {
+      var value = wx.getStorageSync('userInfo')
+      if (value) {
+        this.globalData.userInfo = JSON.parse(value);
+        console.log("获取缓存信息成功：",this.globalData);
+        if(this.setUserName){
+          console.log("设置index name：",this.globalData.userInfo.nickName);
+          this.setUserName(this.globalData.userInfo.nickName);
+        }else{
+          console.log("set fail:", this.setUserName);
+        }
+      }else{
+        console.log("获取缓存信息失败");
+      }
+    } catch (e) {
+      // Do something when catch error
+    }
     this.globalData = {
       ...this.globalData,
       isIpx: (systemInfo.screenHeight / systemInfo.screenWidth) > 1.86,
       isAndroid: platform.indexOf('android') > -1,
       isIOS: platform.indexOf('ios') > -1,
     };
-
+    
     // 初始化云开发
     if (!wx.cloud) {
       console.error('小程序基础库版本过低，请使用 2.2.3 或以上版本的支持库以使用云开发能力');
@@ -60,7 +76,6 @@ App({
     // WebSocket 订阅设备信息
     this.wsSubscribe();
   },
-
   // 订阅设备信息
   wsSubscribe() {
     subscribeStore([

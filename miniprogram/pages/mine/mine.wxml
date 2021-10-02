@@ -1,2 +1,14 @@
 <!--pages/mine/mine.wxml-->
-<text>pages/mine/mine.wxml</text>
+<page-wrapper bind:loginready="onLoginReady">
+    <view class="container">
+        <image class="head-image" src="{{avatarUrl}}"></image>
+        <view class="menu-container">
+            <mp-cells>
+                <mp-cell value="我的二维码" link="{true}"></mp-cell>
+                <mp-cell value="我的设备" link="{true}"></mp-cell>
+                <mp-cell value="设置" link="{true}"></mp-cell>
+                <mp-cell value="帮助与反馈" link="{true}"></mp-cell>
+            </mp-cells>
+        </view>
+    </view>
+</page-wrapper>

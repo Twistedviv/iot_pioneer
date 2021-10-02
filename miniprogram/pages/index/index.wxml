@@ -31,7 +31,7 @@
 <page-wrapper bind:loginready="onLoginReady">
   <view class="container">
     <view class="page-title">
-      <view>XXX，欢迎回家</view>
+      <view>{{userName}}，欢迎回家</view>
       <view class="weather">
         <image class="page-title-weather-image" src="" alt="" />
         <text>

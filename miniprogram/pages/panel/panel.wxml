@@ -16,12 +16,18 @@
 </template>
 <page-wrapper>
   <view class="container">
-    <view class="page-title">
+    <!-- <view class="page-title">
       {{deviceInfo.AliasName || '设备控制'}}
       <view class="item-status status-online" wx:if="{{deviceInfo.DeviceName === '~virtualDev'}}">虚拟设备</view>
       <view class="item-status status-online" wx:elif="{{deviceInfo.NetType === 'ble'}}">蓝牙设备</view>
       <view class="item-status status-online" wx:elif="{{deviceInfo.NetType === 'lorawan'}}">LoRa 设备</view>
       <view class="item-status status-{{deviceStatus === 1 ? 'online' : 'offline'}}" wx:else>{{deviceStatus === 1 ? '在线' : '离线'}}</view>
+    </view> -->
+    <view class="device-background">
+      <image class="device-image"></image>
+      <view class="device-name">
+        {{deviceInfo.AliasName || '设备控制'}}
+      </view>
     </view>
     <view class="page-main">
       <view class="panel-list">
@@ -58,7 +64,7 @@
         />
         <btn-group
           wx:else
-          buttons="{{[{ btnText: '检查固件更新', id: 'check-firmware-upgrade'}, { btnText: '分享设备', id: 'share-device'}, { btnText: '删除设备', type: 'danger', id: 'delete-device' }]}}"
+          buttons="{{[{ btnText: '删除设备', type: 'danger', id: 'delete-device' }]}}"
           bind:click="onOperationButtonClick"
           no-padding="{{true}}"
         />
