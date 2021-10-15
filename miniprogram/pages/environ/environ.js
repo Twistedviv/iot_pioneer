@@ -1,14 +1,35 @@
 // pages/env.js
+const store = require('../../redux/index.js')
+const { subscribeStore } = require('../../libs/store-subscribe');
+
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-        environmentList: [{
+        environmentList: [
+        {
             name: '室温',
-            value: 60
-        }],
+            key: 'switch',
+            value: 60,
+            iconUrl: './asset/temperature.png'
+        },
+        {
+            name: '光照',
+            key: 'brightness',
+            value: 60,
+            iconUrl: './asset/light.png'
+        },
+        {
+            name: '颜色',
+            key: 'color',
+            value: 60,
+            iconUrl: './asset/humidity.png'
+        }
+     ],
+        deviceDataMap: {},
+        dataTemplateProperties: [],
         shareDeviceList: [],
         deviceStatusMap: {},
         inited: false,
@@ -19,14 +40,21 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-
+        this.unsubscribeAll = subscribeStore([
+            'deviceDataMap',
+          ].map(key => ({
+            selector: state => state[key],
+            onChange: value => this.setData({ [key]: value }),
+          })));
     },
 
     /**
      * 生命周期函数--监听页面初次渲染完成
      */
     onReady: function () {
-
+        setTimeout(() => {
+            console.log("deviceDataMap:",this.data.deviceDataMap['ZN8AW4VCWE/pioneer_light']);
+        }, 3000);
     },
     
     onLoginReady: function () {

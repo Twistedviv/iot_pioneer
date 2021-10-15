@@ -4,7 +4,7 @@
             <view class="title">环境</view>
         </view>
         <view class="seperator"></view>
-        <template is="environment-list" data="{{environmentList}}"></template>
+        <template is="environment-list" data="{{environmentList, deviceDataMap,store}}"></template>
     </view>
 </page-wrapper>
 
@@ -13,19 +13,15 @@
     class="environment-item need-hover" 
     wx:for="{{environmentList}}"
     wx:key="name"
-    bindtap="onTapItem"
     data-item="{{item}}"
-    hover-start-time="20"
-    hover-stay-time="70"
-    hover-class="hover"
   >
     <view class="item-content">
       <view class="item-body">
-        <image class="item-icon"></image>
+        <image class="item-icon" src="{{item.iconUrl}}"></image>
         <view class="item-info">
             <view class="info-data">
                 <text class="data-name">{{item.name}}: </text>
-                <text class="data-value">{{item.value}}</text>
+                <text class="data-value">{{deviceDataMap['ZN8AW4VCWE/pioneer_light'][item.key].Value}}</text>
             </view>
             <view class="info-tip">tip：室温偏高，试试打开电扇</view>
         </view>

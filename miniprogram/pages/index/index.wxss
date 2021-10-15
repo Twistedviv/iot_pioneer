@@ -17,6 +17,8 @@
 .weather{
   display: flex;
   align-items: center;
+  line-height: 38rpx;
+  margin-top: 16rpx;
 }
 .weather > text {
   margin-left: 18rpx;
@@ -28,7 +30,7 @@
 .page-title-weather-image{
   width: 50rpx;
   height: 50rpx;
-  background: #000;
+  border-radius: 50%;
 }
 
 .page-main {
@@ -70,10 +72,13 @@
 }
 
 .device-item .item-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   position: relative;
   height: 160rpx;
   box-sizing: border-box;
-  padding: 12rpx 20rpx;
+  padding: 12rpx 20rpx 8rpx;
   
 }
 .device-item .item-content .item-footer{
@@ -84,9 +89,8 @@
 
 .device-item .item-content .item-logo {
   display: inline-block;
-  width: 68rpx;
-  height: 68rpx;
-  margin-top: 16rpx;
+  width: 80rpx;
+  height: 80rpx;
 }
 .device-item .item-content .item-switch {
   width: 60rpx;
@@ -98,13 +102,15 @@
 }
 
 .device-item .item-content .item-body {
-  display: inline-block;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .device-item .item-content .item-body .item-name {
   font-weight: 500;
   color: #444444;
-  width: 370rpx;
   font-size: 24rpx;
 }
 
@@ -117,16 +123,14 @@
 }
 
 .item-status {
-  display: inline-block;
   box-sizing: border-box;
   color: #fff;
-  padding: 6rpx 14rpx;
-  font-size: 20rpx;
+  padding: 0 8rpx;
+  font-size: 16rpx;
+  height: 28rpx;
   font-weight: normal;
-  vertical-align: middle;
-  border-radius: 20rpx;
-  text-align: center;
-  line-height: initial;
+  border-radius: 8rpx;
+  line-height: 28rpx;
 }
 
 view.float-add-device-btn {

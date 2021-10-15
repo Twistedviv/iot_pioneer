@@ -17,7 +17,6 @@
 .device-background {
 	width: 100%;
 	height: 400rpx;
-	background-color: beige;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -27,7 +26,6 @@
 .device-image {
 	width: 300rpx;
 	height: 300rpx;
-	background-color: black;
 }
 .device-name {
 

@@ -24,32 +24,35 @@
       <view class="item-status status-{{deviceStatus === 1 ? 'online' : 'offline'}}" wx:else>{{deviceStatus === 1 ? '在线' : '离线'}}</view>
     </view> -->
     <view class="device-background">
-      <image class="device-image"></image>
+      <image class="device-image" src="{{deviceInfo.IconUrl}}"></image>
       <view class="device-name">
-        {{deviceInfo.AliasName || '设备控制'}}
+        <!-- {{deviceInfo.AliasName || '设备控制'}} -->
+        {{deviceInfo.AliasName}}
       </view>
     </view>
     <view class="page-main">
       <view class="panel-list">
         <block wx:if="{{dataTemplate.properties.length > 0}}">
           <block wx:for="{{dataTemplate.properties}}" wx:key="id">
-            <picker wx:if="{{item.define.type === 'enum'}}"
+            <block wx:if="{{item.mode !== 'r'}}">
+              <picker wx:if="{{item.define.type === 'enum'}}"
               bindchange="onPickerChange" 
               value="{{item.value}}"
               range="{{item.mappingList}}"
               range-key="label"
               data-item="{{item}}"
               disabled="{{item.mode !== 'rw' || deviceStatus === 0}}"
-            >
-              <template
+              >
+                <template
+                  is="property-item"
+                  data="{{item, rawValue: deviceData[item.id], disabled: (item.mode !== 'rw' || deviceStatus === 0)}}"
+                />
+              </picker>
+              <template wx:else
                 is="property-item"
                 data="{{item, rawValue: deviceData[item.id], disabled: (item.mode !== 'rw' || deviceStatus === 0)}}"
               />
-            </picker>
-            <template wx:else
-              is="property-item"
-              data="{{item, rawValue: deviceData[item.id], disabled: (item.mode !== 'rw' || deviceStatus === 0)}}"
-            />
+            </block>
           </block>
         </block>
         <view wx:else class="empty-property-tip">尚未定义产品的数据模板，完成数据模板定义后即可使用设备控制功能</view>

@@ -20,3 +20,8 @@
     border-radius: 40rpx 40rpx 0 0;
     box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1)
 }
+.cell-icon {
+    width: 30rpx;
+    height: 30rpx;
+    margin-right: 16rpx;
+}
