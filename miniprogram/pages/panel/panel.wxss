@@ -5,14 +5,27 @@
   justify-content: flex-start;
   align-items: center;
 }
-
-.page-title {
-  color: #000;
-  font-size: 54rpx;
-  font-weight: 500;
-	align-self: flex-start;
-	width: 100%;
-	position: relative;
+.top-tip {
+	width: 86%;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	padding: 20rpx 30rpx;
+	border: 1px #c9c9c9 solid;
+	margin: 20rpx auto 0;
+	border-radius: 8rpx;
+	box-shadow: #FFFFFF 10%;
+}
+.tip-icon {
+	width: 32rpx;
+	height: 32rpx;
+	margin-right: 18rpx;
+}
+.tip-text {
+	font-size: 28rpx;
+	height: 32rpx;
+	line-height: 32rpx;
+	font-weight: 400;
 }
 .device-background {
 	width: 100%;
