@@ -28,7 +28,7 @@
 </template>
 
 <page-wrapper bind:loginready="onLoginReady">
-  <view class="container">
+  <view class="container app-bg">
     <view class="page-title">
       <view>{{userName}}，欢迎回家</view>
       <view class="weather">

@@ -1,4 +1,5 @@
 .container {
+  height: 100vh;
   padding: 50rpx 50rpx 0;
   display: flex;
   flex-direction: column;
@@ -171,3 +172,5 @@ view.float-add-device-btn {
   margin-top: 180rpx;
   text-align: center;
 }
+
+

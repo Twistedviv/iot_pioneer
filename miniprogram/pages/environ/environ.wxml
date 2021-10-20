@@ -21,7 +21,7 @@
         <view class="item-info">
             <view class="info-data">
                 <text class="data-name">{{item.name}}: </text>
-                <text class="data-value">{{deviceDataMap['ZN8AW4VCWE/pioneer_light'][item.key].Value}}</text>
+                <text class="data-value">{{deviceDataMap['CZRJVSUX4E/t1'][item.key].Value}}</text>
             </view>
             <view class="info-tip">tip：室温偏高，试试打开电扇</view>
         </view>

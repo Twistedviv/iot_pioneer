@@ -1,7 +1,7 @@
 // 云函数入口文件
 // 请填写 物联网开发平台 > 应用开发 中申请的小程序 AppKey 及 AppSecret
-const APP_KEY = 'mRBjKwudbEjVnOByN';
-const APP_SECRET = 'orHnBhdURmsRmUceXCEo';
+const APP_KEY = 'mxhjhKkfXQYjTlBsE';
+const APP_SECRET = 'LWcrlzCtEzoCyGGgQZsO';
 
 const cloud = require('wx-server-sdk');
 const CryptoJS = require('crypto-js');

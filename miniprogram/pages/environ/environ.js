@@ -11,19 +11,19 @@ Page({
         environmentList: [
         {
             name: '室温',
-            key: 'switch',
+            key: 'tempreture',
             value: 60,
             iconUrl: './asset/temperature.png'
         },
         {
             name: '光照',
-            key: 'brightness',
+            key: 'light',
             value: 60,
             iconUrl: './asset/light.png'
         },
         {
-            name: '颜色',
-            key: 'color',
+            name: '土壤湿度',
+            key: 'turang',
             value: 60,
             iconUrl: './asset/humidity.png'
         }
@@ -53,7 +53,7 @@ Page({
      */
     onReady: function () {
         setTimeout(() => {
-            console.log("deviceDataMap:",this.data.deviceDataMap['ZN8AW4VCWE/pioneer_light']);
+            console.log("deviceDataMap:",this.data.deviceDataMap['CZRJVSUX4E/t1']);
         }, 3000);
     },
     

@@ -8,7 +8,7 @@ const initState = {
   deviceList: [],
   shareDeviceList: [],
   wifiList: [],
-  deviceId: 'ZN8AW4VCWE/pioneer_light'
+  deviceId: 'CZRJVSUX4E/t1'
 };
 
 const store = createStore(reducer, initState);
