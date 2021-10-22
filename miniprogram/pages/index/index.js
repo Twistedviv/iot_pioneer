@@ -2,7 +2,6 @@ const actions = require('../../redux/actions');
 const { subscribeStore } = require('../../libs/store-subscribe');
 const showWifiConfTypeMenu = require('../add-device/wifiConfTypeMenu');
 const models = require('../../models');
-const store = require('../../redux/index.js')
 const app = getApp();
 const { controlDeviceData, getDevicesData } = require('../../redux/actions');
 
@@ -15,15 +14,13 @@ Page({
     deviceDataMap: {},
     inited: false,
     userId: '',
-    userName: 'XXX',
+    userInfo: {},
     weatherIconSrc: './asset/sun.png',
-    weather: '晴',
-    temperature: '26',
+    weather: '-',
+    temperature: '-',
   },
 
   onLoad() {
-    // 先本地获取用户信息
-    this.setData({userName: app.globalData.userInfo && app.globalData.userInfo.nickName})
     // 请求天气数据
     this.requestWeather();
     // 订阅store数据变化
@@ -32,6 +29,7 @@ Page({
       'shareDeviceList',
       'deviceStatusMap',
       'deviceDataMap',
+      'userInfo'
     ].map(key => ({
       selector: state => state[key],
       onChange: value => this.setData({ [key]: value }),
@@ -89,7 +87,7 @@ Page({
   },
   requestWeather(){
     wx.request({
-      url: 'https://wthrcdn.etouch.cn/weather_mini?city=上海市',
+      url: 'http://wthrcdn.etouch.cn/weather_mini?city=上海市',
       success: (res) => {
         console.log("请求成功：",res);
         let todayWeather = res.data.data.forecast[0];

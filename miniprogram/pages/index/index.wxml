@@ -12,9 +12,6 @@
     <view class="item-content">
       <view class="item-body">
         <view class="item-name">{{item.AliasName}}</view>
-        <!-- <view class="item-status status-online" wx:if="{{item.DeviceName === '~virtualDev'}}">虚拟设备</view>
-        <view class="item-status status-online" wx:elif="{{item.NetType === 'ble'}}">蓝牙设备</view>
-        <view class="item-status status-online" wx:elif="{{item.NetType === 'lorawan'}}">LoRa 设备</view> -->
         <view class="item-status status-{{deviceStatusMap[item.DeviceId] === 1 ? 'online' : 'offline'}}" >{{deviceStatusMap[item.DeviceId] === 1 ? '在线' : '离线'}}</view>
       </view>
       <view class="item-footer">
@@ -30,7 +27,7 @@
 <page-wrapper bind:loginready="onLoginReady">
   <view class="container app-bg">
     <view class="page-title">
-      <view>{{userName}}，欢迎回家</view>
+      <view>{{userInfo.nickName}}，欢迎回家</view>
       <view class="weather">
         <image class="page-title-weather-image" src="{{weatherIconSrc}}" alt="" />
         <text>
@@ -63,11 +60,6 @@
         <view class="device-list" wx:if="{{deviceList.length}}">
           <template is="device-list" data="{{deviceList, deviceStatusMap, deviceDataMap,deviceId}}"/>
         </view>
-
-        <!-- <view class="share-device-list" wx:if="{{shareDeviceList.length > 0}}">
-          <view class="share-device-list-title">分享的设备</view>
-          <template is="device-list" data="{{deviceList: shareDeviceList, deviceStatusMap,store}}"/>
-        </view> -->
       </block>
       
     </view>

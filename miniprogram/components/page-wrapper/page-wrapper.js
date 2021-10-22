@@ -1,6 +1,9 @@
 const app = getApp();
 const { getErrorMsg } = require('../../libs/utillib');
 const promisify = require('../../libs/wx-promisify');
+const store = require('../../redux/index');
+const actionTypes = require('../../redux/actionTypes');
+
 
 Component({
   options: {
@@ -68,7 +71,13 @@ Component({
         });
 
         const { nickName, avatarUrl } = result.userInfo;
-        
+        console.log("本次获取userInfo",result.userInfo); 
+        store.dispatch({
+          type: actionTypes.UPDATE_USERINFO_DATA,
+          payload: {
+            userInfo: result.userInfo
+          }
+        });
         wx.setStorage({
           key:"userInfo",
           data: JSON.stringify(result.userInfo)

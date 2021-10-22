@@ -13,19 +13,22 @@ Page({
             name: '室温',
             key: 'tempreture',
             value: 60,
-            iconUrl: './asset/temperature.png'
+            iconUrl: './asset/temperature.png',
+            rule: ()=> 'helo'
         },
         {
             name: '光照',
             key: 'light',
             value: 60,
-            iconUrl: './asset/light.png'
+            iconUrl: './asset/light.png',
+            rule: ()=> 'helo'
         },
         {
             name: '土壤湿度',
             key: 'turang',
             value: 60,
-            iconUrl: './asset/humidity.png'
+            iconUrl: './asset/humidity.png',
+            rule: ()=> 'helo'
         }
      ],
         deviceDataMap: {},
@@ -42,6 +45,7 @@ Page({
     onLoad: function (options) {
         this.unsubscribeAll = subscribeStore([
             'deviceDataMap',
+            'deviceStatusMap'
           ].map(key => ({
             selector: state => state[key],
             onChange: value => this.setData({ [key]: value }),

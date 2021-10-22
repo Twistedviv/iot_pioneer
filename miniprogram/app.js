@@ -18,22 +18,33 @@ const SoftApPlug = require('qcloud-iotexplorer-appdev-plugin-wificonf-softap').d
 const promisify = require('./libs/wx-promisify');
 const { subscribeStore } = require('./libs/store-subscribe');
 const actions = require('./redux/actions');
+const actionTypes = require('./redux/actionTypes');
+const store = require('./redux/index');
+
 
 App({
   onLaunch() {
     const systemInfo = wx.getSystemInfoSync();
     const platform = (systemInfo.platform || '').toLowerCase();
+    // 如果本地缓存中有userinfo记录，则使用该数据更新store
     try {
       var value = wx.getStorageSync('userInfo')
       if (value) {
-        this.globalData.userInfo = JSON.parse(value);
-        console.log("获取缓存信息成功：",this.globalData);
-        if(this.setUserName){
-          console.log("设置index name：",this.globalData.userInfo.nickName);
-          this.setUserName(this.globalData.userInfo.nickName);
-        }else{
-          console.log("set fail:", this.setUserName);
-        }
+        // this.globalData.userInfo = JSON.parse(value);
+        // console.log("获取缓存信息成功：",this.globalData);
+        // if(this.setUserName){
+        //   console.log("设置index name：",this.globalData.userInfo.nickName);
+        //   this.setUserName(this.globalData.userInfo.nickName);
+        // }else{
+        //   console.log("set fail:", this.setUserName);
+        // }
+        // 修改STORE中的username
+        store.dispatch({
+          type: actionTypes.UPDATE_USERINFO_DATA,
+          payload: {
+            userInfo: JSON.parse(value)
+          }
+        });
       }else{
         console.log("获取缓存信息失败");
       }

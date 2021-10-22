@@ -1,31 +1,56 @@
 <page-wrapper bind:loginready="onLoginReady">
     <view class="container">
-        <view>
+        <view class="title-box">
             <view class="title">环境</view>
+            <view class="top-tip" wx:if="{{deviceStatusMap['CZRJVSUX4E/t1'] === 0}}">
+              <image class="tip-icon" src="./asset/warn.png"></image>
+              <text class="tip-text">设备已离线，数据可能不准确</text>
+            </view>
         </view>
         <view class="seperator"></view>
+        
         <template is="environment-list" data="{{environmentList, deviceDataMap,store}}"></template>
     </view>
 </page-wrapper>
 
 <template name="environment-list">
-  <view
-    class="environment-item need-hover" 
-    wx:for="{{environmentList}}"
-    wx:key="name"
-    data-item="{{item}}"
-  >
-    <view class="item-content">
+  <view class="item-content">
       <view class="item-body">
-        <image class="item-icon" src="{{item.iconUrl}}"></image>
+        <image class="item-icon" src="./asset/temperature.png"></image>
         <view class="item-info">
             <view class="info-data">
-                <text class="data-name">{{item.name}}: </text>
-                <text class="data-value">{{deviceDataMap['CZRJVSUX4E/t1'][item.key].Value}}</text>
+                <text class="data-name">室温: </text>
+                <text class="data-value">{{deviceDataMap['CZRJVSUX4E/t1'].tempreture.Value}}</text>
             </view>
-            <view class="info-tip">tip：室温偏高，试试打开电扇</view>
+            <view class="info-tip">{{deviceDataMap['CZRJVSUX4E/t1'].tempreture.Value >= 30 ? "tip：室温偏高，试试打开电扇" : 
+            deviceDataMap['CZRJVSUX4E/t1'].tempreture.Value >= 20 ? "tip：室温比较合适哦" : "tip：室温偏低，去晒晒太阳吧"}}</view>
         </view>
       </view>
     </view>
-  </view>
+    <view class="item-content">
+      <view class="item-body">
+        <image class="item-icon" src="./asset/light.png"></image>
+        <view class="item-info">
+            <view class="info-data">
+                <text class="data-name">光照: </text>
+                <text class="data-value">{{4096 - deviceDataMap['CZRJVSUX4E/t1'].light.Value}}</text>
+            </view>
+            <view class="info-tip">{{deviceDataMap['CZRJVSUX4E/t1'].light.Value <= 500 ? "tip：光线有点强哦，拉上窗帘吧" : 
+            deviceDataMap['CZRJVSUX4E/t1'].light.Value <= 1000 ? "tip：看来是个阳光明媚的一天" : "tip：光线有点弱，打开灯吧"}}</view>
+        </view>
+      </view>
+    </view>
+    <view class="item-content">
+      <view class="item-body">
+        <image class="item-icon" src="./asset/humidity.png"></image>
+        <view class="item-info">
+            <view class="info-data">
+                <text class="data-name">土壤湿度: </text>
+                <text class="data-value">{{deviceDataMap['CZRJVSUX4E/t1'].turang.Value}}</text>
+            </view>
+            <view class="info-tip">{{deviceDataMap['CZRJVSUX4E/t1'].turang.Value <= 1800 ? "tip：土壤中水分有些多了哦" : 
+            deviceDataMap['CZRJVSUX4E/t1'].turang.Value <= 2500 ? "tip：水分正合适呢" : "tip：土壤有些缺水了哦"}}</view>
+        </view>
+      </view>
+    </view>
 </template>

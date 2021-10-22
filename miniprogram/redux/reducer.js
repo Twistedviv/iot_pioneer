@@ -97,6 +97,12 @@ module.exports = function reducer(state, action) {
         wifiList: [],
       };
     }
+    case actionTypes.UPDATE_USERINFO_DATA: {
+      return {
+        ...state,
+        userInfo: payload.userInfo,
+      };
+    }
     default:
       return { ...state, ...payload };
   }
