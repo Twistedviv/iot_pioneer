@@ -20,7 +20,7 @@
         <view class="item-info">
             <view class="info-data">
                 <text class="data-name">室温: </text>
-                <text class="data-value">{{deviceDataMap['CZRJVSUX4E/t1'].tempreture.Value}}</text>
+                <text class="data-value">{{deviceDataMap['CZRJVSUX4E/t1'].tempreture.Value / 10}}</text>
             </view>
             <view class="info-tip">{{deviceDataMap['CZRJVSUX4E/t1'].tempreture.Value >= 30 ? "tip：室温偏高，试试打开电扇" : 
             deviceDataMap['CZRJVSUX4E/t1'].tempreture.Value >= 20 ? "tip：室温比较合适哦" : "tip：室温偏低，去晒晒太阳吧"}}</view>
