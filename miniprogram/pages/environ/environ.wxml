@@ -22,8 +22,9 @@
                 <text class="data-name">室温: </text>
                 <text class="data-value">{{deviceDataMap['CZRJVSUX4E/t1'].tempreture.Value / 10}}</text>
             </view>
-            <view class="info-tip">{{deviceDataMap['CZRJVSUX4E/t1'].tempreture.Value >= 30 ? "tip：室温偏高，试试打开电扇" : 
-            deviceDataMap['CZRJVSUX4E/t1'].tempreture.Value >= 20 ? "tip：室温比较合适哦" : "tip：室温偏低，去晒晒太阳吧"}}</view>
+            <view class="info-tip over" wx:if="{{deviceDataMap['CZRJVSUX4E/t1'].tempreture.Value >= 300}}">tip：当前室温偏高，正在为您开启风扇降温</view>
+            <view class="info-tip normal" wx:elif="{{deviceDataMap['CZRJVSUX4E/t1'].tempreture.Value >= 200}}">tip：当前室温比较合适哦</view>
+            <view class="info-tip low" wx:else>tip：室温偏低，去晒晒太阳吧</view>
         </view>
       </view>
     </view>
@@ -35,8 +36,9 @@
                 <text class="data-name">光照: </text>
                 <text class="data-value">{{4096 - deviceDataMap['CZRJVSUX4E/t1'].light.Value}}</text>
             </view>
-            <view class="info-tip">{{deviceDataMap['CZRJVSUX4E/t1'].light.Value <= 500 ? "tip：光线有点强哦，拉上窗帘吧" : 
-            deviceDataMap['CZRJVSUX4E/t1'].light.Value <= 1000 ? "tip：看来是个阳光明媚的一天" : "tip：光线有点弱，打开灯吧"}}</view>
+            <view class="info-tip over" wx:if="{{deviceDataMap['CZRJVSUX4E/t1'].light.Value <= 500}}">tip：光线有点强哦，拉上窗帘吧</view>
+            <view class="info-tip normal" wx:elif="{{deviceDataMap['CZRJVSUX4E/t1'].light.Value >= 1000}}">tip：看来是个阳光明媚的一天</view>
+            <view class="info-tip low" wx:else>tip：室温偏低，去晒晒太阳吧</view>
         </view>
       </view>
     </view>
@@ -48,8 +50,9 @@
                 <text class="data-name">土壤湿度: </text>
                 <text class="data-value">{{deviceDataMap['CZRJVSUX4E/t1'].turang.Value}}</text>
             </view>
-            <view class="info-tip">{{deviceDataMap['CZRJVSUX4E/t1'].turang.Value <= 1800 ? "tip：土壤中水分有些多了哦" : 
-            deviceDataMap['CZRJVSUX4E/t1'].turang.Value <= 2500 ? "tip：水分正合适呢" : "tip：土壤有些缺水了哦"}}</view>
+            <view class="info-tip over" wx:if="{{deviceDataMap['CZRJVSUX4E/t1'].turang.Value <= 1800}}">tip：土壤中水分有些多了哦</view>
+            <view class="info-tip normal" wx:elif="{{deviceDataMap['CZRJVSUX4E/t1'].turang.Value <= 2500}}">tip：水分正合适呢</view>
+            <view class="info-tip low" wx:else>tip：土壤有些缺水了哦</view>
         </view>
       </view>
     </view>

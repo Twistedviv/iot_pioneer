@@ -1,0 +1,8 @@
+/* pages/help/help.wxss */
+.page {
+    padding: 0 24rpx;
+}
+.p {
+    margin-top: 30rpx;
+}
+

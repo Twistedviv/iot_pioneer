@@ -41,6 +41,7 @@
 .page-main-title {
   font-size: 38rpx;
   font-weight: 500;
+  margin-bottom: 28rpx;
 }
 .seperator {
   width: 100%;

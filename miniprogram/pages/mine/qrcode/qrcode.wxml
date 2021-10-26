@@ -1,0 +1,5 @@
+<!--pages/mine/qrcode/qrcode.wxml-->
+<view class="page">
+    <view>使用微信扫描下方二维码可直达小程序～</view>
+    <image mode="aspectFit" show-menu-by-longpress="{{true}}" src="./asset/qr.jpg"></image>
+</view>

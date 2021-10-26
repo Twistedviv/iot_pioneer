@@ -1,0 +1,21 @@
+<!--pages/help/help.wxml-->
+<view class="page">
+    使用易居EnjoyLive小程序，具体方式如下：
+
+    <text class="p">
+    方法一：扫描二维码打开。
+    
+    手机用户可将下图二维码保存在本地，识别二维码后自动下载。
+    </text>
+    <image class="qrcode" mode="aspectFit" show-menu-by-longpress="{{true}}" src="./asset/qr.jpg"></image>
+
+    <text class="p">
+    方法二：在微信搜索“易居EnjoyLive”打开。
+
+    打开易居EnjoyLive小程序后，绑定微信账号登录。
+
+    在海外地区登录微信帐号时，可能会因网络波段等原因导致某些功能无法正常使用，具体以实际使用情况为准。
+
+    用海外帐号登录易居EnjoyLive小程序（选择海外地区）时，小程序能否使用取决于所连接设备是否在对应地区发布，同时海外功能会因当地政策有所不同，具体以实际为准（此条同样适用于港澳台地区）。
+    </text>
+</view>

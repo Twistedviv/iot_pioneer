@@ -70,3 +70,12 @@
 .info-tip {
     font-size: 24rpx;
 }
+.over {
+    color: #FF0000;
+}
+.normal {
+    color: #19aa19;
+}
+.low {
+    color: #0caada;
+}

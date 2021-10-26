@@ -1,0 +1,10 @@
+/* pages/mine/qrcode/qrcode.wxss */
+.page{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 24rpx;
+}
+image{
+    margin: 80rpx auto 0;
+}

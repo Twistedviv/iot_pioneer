@@ -10,7 +10,10 @@
         "pages/share/share-list/share-list",
         "pages/share/receive-share/receive-share",
         "pages/environ/environ",
-        "pages/mine/mine"
+        "pages/mine/mine",
+        "pages/mine/help/help",
+        "pages/mine/about/about",
+        "pages/mine/qrcode/qrcode"
     ],
     "window": {
         "backgroundColor": "#FFF",

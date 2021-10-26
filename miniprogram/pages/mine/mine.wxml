@@ -4,17 +4,20 @@
         <image class="head-image" src="{{avatarUrl}}"></image>
         <view class="menu-container">
             <mp-cells>
-                <mp-cell value="我的二维码" link="{true}">
+                <mp-cell value="我的二维码" link="{true}" bindtap="toQrcode">
                     <image class="cell-icon" slot="icon" src="./asset/qrcode.png"></image>
                 </mp-cell>
-                <mp-cell value="我的设备" link="{true}">
+                <mp-cell value="我的设备" link="{true}" bindtap="toDevice">
                     <image class="cell-icon" slot="icon" src="./asset/device.png"></image>
                 </mp-cell>
-                <mp-cell value="设置" link="{true}">
+                <mp-cell value="设置" link="{true}" bindtap="toSetting">
                     <image class="cell-icon" slot="icon" src="./asset/setting.png"></image>
                 </mp-cell>
-                <mp-cell value="帮助与反馈" link="{true}">
+                <mp-cell value="帮助与反馈" link="{true}" bindtap="toHelp">
                     <image class="cell-icon" slot="icon" src="./asset/help.png"></image>
+                </mp-cell>
+                <mp-cell value="关于我们" link="{true}" bindtap="toAbout">
+                    <image class="cell-icon" slot="icon" src="./asset/about.png"></image>
                 </mp-cell>
             </mp-cells>
         </view>

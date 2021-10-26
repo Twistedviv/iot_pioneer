@@ -48,7 +48,7 @@
     </view>
     <view class="page-main">
       <view class="page-main-title">设备列表</view>
-      <view class="seperator"></view>
+      <!-- <view class="seperator"></view> -->
       <view class="device-list-loading" wx:if="{{!inited}}">
         <mp-loading type="circle"></mp-loading>
       </view>

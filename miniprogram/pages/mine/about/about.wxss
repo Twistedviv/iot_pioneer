@@ -1,0 +1,7 @@
+/* pages/mine/about/about.wxss */
+.page {
+    padding: 0 24rpx;
+}
+.p {
+    text-indent: 50rpx;
+}

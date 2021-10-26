@@ -1,23 +1,20 @@
-// pages/mine/mine.js
-const store = require('../../redux/index.js')
-
-
+// pages/mine/about/about.js
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-        avatarUrl: ''
+
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-        this.setData({avatarUrl: store.getState().userInfo.avatarUrl});
+
     },
-    
+
     /**
      * 生命周期函数--监听页面初次渲染完成
      */
@@ -59,33 +56,7 @@ Page({
     onReachBottom: function () {
 
     },
-    toQrcode: function () {
-        wx.navigateTo({
-          url: './qrcode/qrcode',
-        })
-    },
-    toDevice: function () {
-        wx.showToast({
-          title: '功能正在开发中...',
-          icon: "none"
-        })
-    },
-    toSetting: function () {
-        wx.showToast({
-            title: '功能正在开发中...',
-            icon: "none"
-        })
-    },
-    toHelp: function () {
-        wx.navigateTo({
-          url: './help/help',
-        })
-    },
-    toAbout: function () {
-        wx.navigateTo({
-          url: './about/about',
-        })
-    },
+
     /**
      * 用户点击右上角分享
      */
